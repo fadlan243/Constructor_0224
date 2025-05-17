@@ -92,3 +92,59 @@ public:
     friend class Petugas;
 };
 
+class Petugas {
+private:
+    string nama;
+    int idPetugas;
+    string levelAkses;
+
+public:
+    Petugas(string n, int id, string level) 
+        : nama(n), idPetugas(id), levelAkses(level) {}
+
+    void tampilkanInfo() {
+        cout << "Nama Petugas: " << nama 
+             << ", ID: " << idPetugas 
+             << ", Level Akses: " << levelAkses 
+             << endl;
+    }
+
+    void prosesPinjam(Buku* b, Peminjam* p) {
+        if (!b->dipinjam) {
+            b->dipinjam = true;
+            p->totalPinjaman++;
+            cout << "Peminjaman berhasil oleh " << p->getNama() << endl;
+        } else {
+            cout << "Buku sedang dipinjam.\n";
+        }
+    }
+
+    void prosesKembali(Buku* b, Peminjam* p) {
+        if (b->dipinjam) {
+            b->dipinjam = false;
+            if (p->totalPinjaman > 0) p->totalPinjaman--;
+            cout << "Pengembalian berhasil oleh " << p->getNama() << endl;
+        } else {
+            cout << "Buku belum dipinjam.\n";
+        }
+    }
+};
+
+class Admin {
+private:
+    string nama;
+
+public:
+    Admin(string n) : nama(n) {}
+
+    void tampilkanInfo() {
+        cout << "Admin: " << nama << endl;
+    }
+
+    // Admin hanya bisa memanggil fungsi friend ini (akses terbatas)
+    void lihatDataStatistik(const Peminjam& p, const Buku& b) {
+        lihatStatistikPeminjam(p, *this);
+        lihatStatusBuku(b, *this);
+    }
+};
+
