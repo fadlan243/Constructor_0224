@@ -60,3 +60,30 @@ public:
     int getId() { return id; }
 };
 
+class Petugas {
+private:
+    string nama;
+
+public:
+    Petugas(string n) : nama(n) {}
+
+    void prosesPinjam(Buku* b, Peminjam* p) {
+        if (!b->dipinjam) {
+            b->dipinjam = true;
+            cout << "Petugas " << nama << " memproses peminjaman buku oleh " 
+                 << p->getNama() << endl;
+        } else {
+            cout << "Buku sedang dipinjam. Tidak dapat dipinjam lagi.\n";
+        }
+    }
+
+    void prosesKembali(Buku* b) {
+        if (b->dipinjam) {
+            b->dipinjam = false;
+            cout << "Petugas " << nama << " memproses pengembalian buku.\n";
+        } else {
+            cout << "Buku belum dipinjam.\n";
+        }
+    }
+};
+
