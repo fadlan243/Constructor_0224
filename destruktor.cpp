@@ -65,6 +65,6 @@ public:
              << endl;
     }
 
-    friend class Petugas; // Petugas boleh mengubah status peminjaman
+    friend class Petugas; // Petugas boleh mengubah status peminjam
 };
 
