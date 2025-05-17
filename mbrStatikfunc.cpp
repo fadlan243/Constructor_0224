@@ -146,3 +146,11 @@ public:
         lihatStatistikPeminjam(p, *this);
         lihatStatusBuku(b, *this);
     }
+};
+
+// Friend function dari class Peminjam
+void lihatStatistikPeminjam(const Peminjam& p, const Admin& a) {
+    cout << "[Admin Akses Statistik] Total buku dipinjam oleh " << p.nama 
+         << ": " << p.totalPinjaman << endl;
+}
+
