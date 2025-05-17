@@ -154,3 +154,9 @@ void lihatStatistikPeminjam(const Peminjam& p, const Admin& a) {
          << ": " << p.totalPinjaman << endl;
 }
 
+// Friend function dari class Buku
+void lihatStatusBuku(const Buku& b, const Admin& a) {
+    cout << "[Admin Akses Statistik] Status buku \"" << b.judul 
+         << "\": " << (b.dipinjam ? "Sedang dipinjam" : "Tersedia") << endl;
+}
+
