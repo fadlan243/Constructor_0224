@@ -48,3 +48,15 @@ public:
     friend class Petugas;
 };
 
+class Peminjam {
+private:
+    string nama;
+    int id;
+
+public:
+    Peminjam(string n, int i) : nama(n), id(i) {}
+
+    string getNama() { return nama; }
+    int getId() { return id; }
+};
+
