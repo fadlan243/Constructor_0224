@@ -130,21 +130,3 @@ public:
     }
 };
 
-class Admin {
-private:
-    string nama;
-
-public:
-    Admin(string n) : nama(n) {}
-
-    void tampilkanInfo() {
-        cout << "Admin: " << nama << endl;
-    }
-
-    // Admin hanya bisa memanggil fungsi friend ini (akses terbatas)
-    void lihatDataStatistik(const Peminjam& p, const Buku& b) {
-        lihatStatistikPeminjam(p, *this);
-        lihatStatusBuku(b, *this);
-    }
-};
-
