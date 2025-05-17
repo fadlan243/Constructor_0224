@@ -14,3 +14,12 @@ mahasiswa(int Nim, string iNama);
 void cetak();
 };
 
+mahasiswa :: mahasiswa(){
+    nim = 0;
+    nama = "";
+}
+
+mahasiswa :: mahasiswa(int iNim){
+nim=iNim;
+}
+
