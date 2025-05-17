@@ -95,3 +95,21 @@ public:
     friend class Petugas;
 };
 
+class Petugas {
+private:
+    string nama;
+    int idPetugas;
+    string levelAkses;
+
+public:
+    Petugas(string n, int id, string level) 
+        : nama(n), idPetugas(id), levelAkses(level) {}
+
+    void tampilkanInfo() {
+        cout << "Nama Petugas: " << nama 
+             << ", ID: " << idPetugas 
+             << ", Level Akses: " << levelAkses 
+             << endl;
+    }
+
+    
