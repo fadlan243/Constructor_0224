@@ -135,3 +135,35 @@ public:
     friend class Admin; // Admin boleh mengubah level akses
 };
 
+class Admin {
+private:
+    string nama;
+
+public:
+    Admin(string n) : nama(n) {}
+
+    void ubahAkses(Petugas* p, string levelBaru) {
+        cout << "Admin " << nama << " mengubah level akses petugas menjadi: " << levelBaru << endl;
+        p->levelAkses = levelBaru;
+    }
+};
+
+int main() {
+    Buku b1("C++ OOP", "Budi");
+    Peminjam p1("Andi", 101);
+    Petugas pet1("Sinta", 2001, "Standard");
+    Admin admin1("Admin01");
+
+    b1.tampilkanInfo();
+    p1.tampilkanInfo();
+    pet1.tampilkanInfo();
+
+    pet1.prosesPinjam(&b1, &p1);
+    b1.tampilkanInfo();
+    p1.tampilkanInfo();
+
+    admin1.ubahAkses(&pet1, "Supervisor");
+    pet1.tampilkanInfo();
+
+    return 0;
+}
