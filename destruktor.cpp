@@ -25,3 +25,27 @@ angka::~angka(){ //Destructor
     cout<<"Alamat Array Sudah Dilepaskan"<<endl;
 }
 
+void angka::cetak(){
+    for(int i=1;1<panjang;i++){
+        cout<<i<<" = "<<arr[i]<<endl;
+    }
+}
+
+void angka::isiData(){
+    for(int i=1;i<=panjang;i++){
+        cout<<i<<" = ";cont>>Arr[i];
+    }
+    cout<<endl;
+}
+
+int main(){
+    angka belajarcpp(3); //constructor Dipanggil
+    angka *ptrBelajarcpp = new angka(5); //Constructor Dipanggil
+    delete ptrBelajarcpp; //Destructor Dipanggil
+
+    return 0;
+}//Destructor Dipanggil
+
+// Forward declaration
+class Petugas;
+
