@@ -77,13 +77,4 @@ public:
         }
     }
 
-    void prosesKembali(Buku* b) {
-        if (b->dipinjam) {
-            b->dipinjam = false;
-            cout << "Petugas " << nama << " memproses pengembalian buku.\n";
-        } else {
-            cout << "Buku belum dipinjam.\n";
-        }
-    }
-};
-
+    
