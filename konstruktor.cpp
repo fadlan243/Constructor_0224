@@ -122,4 +122,16 @@ public:
         }
     }
 
-    
+    void prosesKembali(Buku* b, Peminjam* p) {
+        if (b->dipinjam) {
+            b->dipinjam = false;
+            if (p->totalPinjaman > 0) p->totalPinjaman--;
+            cout << "Pengembalian berhasil oleh " << p->getNama() << endl;
+        } else {
+            cout << "Buku belum dipinjam.\n";
+        }
+    }
+
+    friend class Admin; // Admin boleh mengubah level akses
+};
+
