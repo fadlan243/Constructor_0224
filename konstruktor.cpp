@@ -112,4 +112,14 @@ public:
              << endl;
     }
 
+    void prosesPinjam(Buku* b, Peminjam* p) {
+        if (!b->dipinjam) {
+            b->dipinjam = true;
+            p->totalPinjaman++;
+            cout << "Peminjaman berhasil oleh " << p->getNama() << endl;
+        } else {
+            cout << "Buku sedang dipinjam.\n";
+        }
+    }
+
     
