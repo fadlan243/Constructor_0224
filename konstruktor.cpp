@@ -73,3 +73,25 @@ public:
     friend class Petugas;
 };
 
+class Peminjam {
+private:
+    string nama;
+    int id;
+    int totalPinjaman;
+
+public:
+    Peminjam(string n, int i) : nama(n), id(i), totalPinjaman(0) {}
+
+    void tampilkanInfo() {
+        cout << "Nama: " << nama 
+             << ", ID: " << id 
+             << ", Total Pinjaman: " << totalPinjaman 
+             << endl;
+    }
+
+    string getNama() { return nama; }
+    int getId() { return id; }
+
+    friend class Petugas;
+};
+
